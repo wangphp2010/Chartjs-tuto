@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    https://www.chartjs.org/
+    <div style="width:50%; background-color:beige;">
+        <canvas id="myChart">zone of chart </canvas>
+        https://www.youtube.com/watch?v=mfZcl2Npwuw&list=PLliocbKHJNwv7Vl3lnBwK52K5l84n7KNy&index=8
+    </div>
+    <script>
+        (function () {
+            'use strict'; // es6 严格定义
+            var type = 'bar'; // line ,bar , horizontalBar , ... 
+            var data = {
+                labels: [2015, 2016, 2017, 2018, 2019],
+                datasets: [
+
+                    {
+                        label: '优酷',
+                        data: [100, 150, 300, 800, 1600],
+                        borderColor: 'black',
+                        borderWidth: 8,
+                        backgroundColor: 'skyblue'
+
+                    },
+                    {
+                        label: 'youtube',
+                        data: [50, 100, 200, 400, 600],
+                        //backgroundColor: 'red';
+                        backgroundColor: ['red', 'orange', 'yellow', 'green', 'steelblue'],
+                        borderColor: 'maroon',
+                        borderWidth: 8,
+                    },
+
+
+
+                ]
+            };
+            var options = {
+
+
+                scales: {
+                    xAxes: [{
+                        stacked: true // 叠加
+                    }],
+                    yAxes: [{
+
+                        stacked: true
+                    }]
+
+                },
+                title: {
+                    display: true,
+                    text: 'videos ',
+                    fontColor: 'green',
+                    fontSize: '24',
+                },
+
+            };
+
+
+
+
+
+
+
+
+
+
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: type,
+                data: data,
+                options: options
+
+            });
+
+        })();    //这个写法是网页加载完后才执行
+
+    </script>
+</body>
+
+</html>

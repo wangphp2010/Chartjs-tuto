@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+    <title>雷达图 </title>
+</head>
+
+<body>
+    https://www.chartjs.org/
+    <div style="width:50%; background-color:beige;">
+        <canvas id="myChart">zone of chart </canvas>
+
+    </div>
+    <script>
+        (function () {
+            'use strict'; // es6 严格定义
+            var type = 'radar'; // line ,bar , horizontalBar , ... 
+            var data = {
+                labels: ['伤害','辅助','存活','上手','价格'],
+                datasets: [
+
+                    {
+                        label: '柏拉图',
+                        data: [70,60,50,50,70],
+                        backgroundColor:'rgba(0,255,127,0.5)'
+
+                    },
+                    {
+                        label: '雷吉',
+                        data: [90,10,60,40,80],
+                        backgroundColor:'rgba(0,0,0,0.5)'
+
+                    },
+
+
+
+                ]
+            };
+            var options = {
+
+                scales: {
+                    ticks:{
+                        suggestedMin:0,
+                        suggestedMax:100,
+                        stepSize:20,
+                    }
+
+                },
+
+                title: {
+                    display: true,
+                    text: 'ana video',
+                    fontColor: 'green',
+                    fontSize: '24',
+                },
+
+            };
+
+
+
+
+
+
+
+
+
+
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: type,
+                data: data,
+                options: options
+
+            });
+
+        })();    //这个写法是网页加载完后才执行
+
+    </script>
+</body>
+
+</html>

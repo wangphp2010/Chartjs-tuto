@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+    <title>圆饼图 </title>
+</head>
+
+<body>
+    https://www.chartjs.org/
+    <div style="width:50%; background-color:beige;">
+        <canvas id="myChart">zone of chart </canvas>
+
+    </div>
+    <script>
+        (function () {
+            'use strict'; // es6 严格定义
+            var type = 'doughnut'; //pie , doughnut
+            var data = {
+                labels: ['柏拉图','雷吉','小路'],
+                datasets: [
+
+                    {
+                        label: '柏拉图',
+                        data: [70,40,50],
+                        backgroundColor:['green','gray','pink']
+
+                    },
+                     
+
+
+                ]
+            };
+            var options = {
+
+                 
+
+                title: {
+                    display: true,
+                    text: 'ana video',
+                    fontColor: 'green',
+                    fontSize: '24',
+                },
+                cutoutPercentage:50 //doughnut 空心百分比
+
+            };
+
+
+
+
+
+
+
+
+
+
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: type,
+                data: data,
+                options: options
+
+            });
+
+        })();    //这个写法是网页加载完后才执行
+
+    </script>
+</body>
+
+</html>
